@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P1-M09</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { width: 95%; margin: auto;  }
+        .dropdown { margin-bottom: 20px; }
+        .time-title, .level-title { font-size: 1.2em; font-weight: bold; }
+        .activity { margin-bottom: 30px; }
+        .banner { background-color: #4CAF50; color: white; padding: 10px; cursor: pointer; }
+        .title { font-weight: bold; }
+        .subtitle { font-style: italic; }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook-P1-M09</h1>
+        
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        function updateContent() {
+            var time = document.getElementById("class-time").value;
+            document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+
+            // Lógica para mostrar/ocultar actividades según la duración
+            var activity2 = document.getElementById("activity-2");
+            var activity4 = document.getElementById("activity-4");
+
+            if (time === "45") {
+                activity2.style.display = "none";
+                activity4.style.display = "block";
+            } else if (time === "40") {
+                activity2.style.display = "none";
+                activity4.style.display = "none";
+            } else {
+                activity2.style.display = "block";
+                activity4.style.display = "block";
+            }
+        }
+
+        // Inicializar contenido según la selección por defecto (50 minutos)
+        updateContent();
+    </script>
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_mision')">
+        <div class="title">📚 Actividad 0: Revisión de Misión ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Revisar la disponibilidad de materiales necesarios para la misión.</div>
+    </div>
+    <div id="revision_mision" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1:</strong> Proyectar Diapositiva 1: Revisar la disponibilidad de materiales (Magic Boards, dispositivos con acceso a Internet).</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> No hay diálogo para los estudiantes, esta actividad es interna del profesor.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('saludo_ritual')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Saludar a los estudiantes y presentar el tema del día.</div>
+    </div>
+    <div id="saludo_ritual" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Proyectar Diapositiva 2: Saludar a los estudiantes por su nombre y presentar el tema del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola Genios! ¿Están listos para una nueva aventura de aprendizaje? Hoy vamos a practicar nuestras habilidades con el teclado y aprender mecanografía básica. ¡Va a ser muy divertido!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Proyectar Diapositiva 3: Pedir que elijan una posición para indicar su estado de ánimo.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Si están emocionados por aprender algo nuevo, ¡levanten los brazos bien alto! Si necesitan un poco más de energía para empezar, crucen los brazos. ¡Vamos a ver cómo estamos hoy!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5 minutos):</strong> Proyectar Diapositiva 4: Guiar a los estudiantes en el ritual de agradecimiento.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Vamos a juntar nuestras manos y dar las gracias por lo que vamos a aprender hoy. ¡Gracias por estar aquí, Genios! Hoy va a ser un gran día de aprendizaje y diversión."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (1 minuto):</strong> Proyectar Diapositiva 5: Explicar los objetivos del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Hoy tenemos tres grandes objetivos: 1) Aprender mecanografía básica, 2) Practicar la precisión y velocidad en el uso del teclado, y 3) Colaborar en equipo para apoyarnos en esta nueva habilidad."</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('innovacion_dia')">
+        <div class="title">💡 Actividad 2: Innovación del Día ⏰ Tiempo: 4.5 minutos</div>
+        <div class="subtitle">Explorar una nueva tecnología diseñada para niños.</div>
+    </div>
+    <div id="innovacion_dia" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Proyectar Diapositiva 6: Explicar brevemente la tecnología del día (Cámaras digitales para niños - VTech Kidizoom).</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Genios, hoy les traigo algo increíble! ¿Sabían que hay cámaras diseñadas especialmente para niños? ¡Se llaman VTech Kidizoom! Estas cámaras les permiten tomar fotos y editar imágenes, pero también los ayudan a desarrollar habilidades con el teclado y el mouse. ¡Vamos a descubrir cómo funciona!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (2 minutos):</strong> Proyectar Diapositiva 7: Reproducir un video de 1 minuto sobre el uso de cámaras digitales en niños y su interfaz simple.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora veamos en acción cómo estas cámaras permiten a los niños explorar la fotografía y la edición de imágenes de manera fácil y divertida, ¡usando clics y teclas!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (2 minutos):</strong> Proyectar Diapositiva 8: Hacer preguntas para que los estudiantes reflexionen sobre cómo el uso de cámaras digitales para niños está relacionado con la mecanografía.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¿Cómo creen que las cámaras digitales para niños ayudan a desarrollar habilidades tecnológicas como el uso del teclado o el mouse? ¿Qué otras tecnologías podrían ayudarnos a aprender más rápido?"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('brain_gym')">
+        <div class="title">🧠 Actividad 3: Brain Gym ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Ejercitar habilidades de mecanografía mediante actividades de coordinación y postura correcta.</div>
+    </div>
+    <div id="brain_gym" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 9: Anunciar la actividad de Brain Gym y la posibilidad de encontrar un Easter Egg.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genios, hoy vamos a aprender todos los secretos del teclado! Presten atención, porque he escondido un Easter Egg en esta actividad. Si descubren el secreto, ¡hay Mon-e extra!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Proyectar Diapositiva 10: Mostrar imágenes de un teclado de computadora y un iPad con la posición correcta de las manos.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Para escribir bien, lo primero es aprender a colocar nuestras manos. En el teclado de una computadora, coloca tus dedos índices (los que están justo al lado de los pulgares) en las teclas F y J. Estas teclas tienen un ‘botoncito’ para que siempre encuentres el lugar correcto sin mirar. Ahora, coloca el resto de tus dedos relajados sobre las teclas que están al lado de F y J, ¡así los tendrás listos para escribir cualquier letra! En el iPad, imagina las teclas F y J debajo de tus dedos índices y coloca los otros dedos justo al lado.”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5minutos):</strong> Proyectar Diapositiva 11: Mostrar el teclado con colores o flechas que indican dónde va cada dedo.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Cada dedo tiene su lugar especial en el teclado. Los dedos índices en F y J, y los otros dedos se colocan en las teclas a su lado. Los dedos se mueven poco para tocar las teclas cercanas y luego regresan a su lugar. ¡Así formarán un gran equipo para escribir sin mirar!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (1 minutos):</strong> Proyectar Diapositiva 12: Mostrar las teclas Shift y Bloq Mayús en teclado de computadora y el ícono de mayúsculas en iPad.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Ahora vamos a aprender a hacer letras grandes, que se llaman mayúsculas. En un teclado de computadora, si solo quieres una letra grande, toca la tecla Shift (una flechita hacia arriba) mientras tocas la letra. ¡Intenta con la primera letra de tu nombre! Si quieres que todas las letras sean grandes, toca la tecla Bloq Mayús. En el iPad, toca la flechita hacia arriba una vez para una letra grande, o dos veces si quieres que todas las letras sean grandes.”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 5 (1 minutos):</strong> Proyectar Diapositiva 13: Mostrar la fila numérica en el teclado y el botón de cambio de teclado en el iPad.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Ahora vamos a aprender a escribir números. En el teclado de computadora, verán una fila de números en la parte superior. Solo toca el número que necesitas y ¡listo! En el iPad, toca el botón de cambio de teclado, que suele ser un ícono de ‘123’, para ver los números. Tócalo otra vez para regresar a las letras.”</td>
+            </tr>
+           <tr>
+    <td><strong>PASO 6 (2 minutos):</strong> Proyectar Diapositiva 14: Mostrar ejemplos de símbolos comunes y su ubicación en el teclado e iPad.</td>
+    <td><strong>DIÁLOGO SUGERIDO:</strong> “Ahora vamos a aprender algunos símbolos importantes que usamos en español. Hay símbolos que necesitan de la tecla Shift y otros que no. ¡Vamos a ver cómo hacer cada uno! <br><br>
+
+    <strong>Signo de Admiración (¡!)</strong>: <br>
+    Computadora: Para el signo de apertura “¡”, mantén presionada Shift y toca la tecla 1. Para el signo de cierre “!”, mantén Shift y toca la misma tecla (1) nuevamente.<br>
+    iPad: Toca “123” y el símbolo de admiración “!” estará en la pantalla. Para el de apertura “¡”, toca “#+=” para ver más símbolos.<br><br>
+
+    <strong>Signo de Interrogación (¿?)</strong>: <br>
+    Computadora: Para el signo de apertura “¿”, mantén Shift y toca la tecla de interrogación, usualmente a la derecha del número 0. Para el signo de cierre “?”, mantén Shift y toca la misma tecla nuevamente.<br>
+    iPad: Toca “123” para ver el signo de interrogación “?” y, para el de apertura “¿”, ve a “#+=” donde encontrarás el símbolo.<br><br>
+
+    <strong>Coma (,) y Punto (.)</strong>: <br>
+    Computadora: Simplemente toca la tecla de coma “,” o la de punto “.”; no necesitas Shift para estos.<br>
+    iPad: Toca “123” y verás las opciones de coma “,” y punto “.” en la primera pantalla.<br><br>
+
+    <strong>Arroba (@)</strong>: <br>
+    Computadora: Mantén Shift y toca la tecla 2 para escribir “@”.<br>
+    iPad: Toca “123” y selecciona el símbolo “@” en la pantalla.<br><br>
+
+    <strong>Punto y Coma (;)</strong>: <br>
+    Computadora: Para escribir punto y coma (;), mantén Shift y toca la tecla que tiene el punto y coma (;).<br>
+    iPad: Toca “123” y selecciona el punto y coma “;” directamente.<br><br>
+
+    <strong>Dos puntos (:)</strong>: <br>
+    Computadora: Mantén Shift y toca la misma tecla que contiene el punto y coma (;) para escribir los dos puntos (:).<br>
+    iPad: Toca “123” para encontrar los dos puntos “:” entre los símbolos.”</td>
+</tr>
+            <tr>
+                <td><strong>PASO 7 (0.5 minuto):</strong> Proyectar Diapositiva 15: Explicar la función de Enter y la distribución QWERTY.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Ahora vamos a conocer una tecla muy importante: Enter. Cada vez que terminas una línea o quieres que el texto baje, toca Enter. Es como decirle a la computadora ‘¡Vamos al siguiente paso!’ Además, ¿notaron que las primeras letras en la fila superior son Q, W, E, R, T y Y? Por eso se llama teclado QWERTY. Esta forma de organizar las letras ayuda a escribir más rápido.”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 8 (0.5 minuto):</strong> Proyectar Diapositiva 16: Revisar los objetivos del día, repasando lo aprendido.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genios, hemos aprendido un montón hoy! Aprendimos a colocar las manos correctamente, a usar las letras grandes, a escribir números, utilizar símbolos, y ahora también a usar Enter y el teclado QWERTY. ¡Vamos a repasar nuestros objetivos para ver todo lo que logramos!”</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('brain_vitamin')">
+        <div class="title">🍇 Actividad 4: Brain Vitamin ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar el cerebro para seguir instrucciones con precisión.</div>
+    </div>
+    <div id="brain_vitamin" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Proyectar Diapositiva 17: Explicar que realizarán un ejercicio breve para preparar su cerebro para seguir instrucciones precisas.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genios, antes de seguir, vamos a darle un descanso divertido a nuestras mentes! Este ejercicio mental rápido ayudará a que sus cerebros estén listos para seguir instrucciones con precisión. ¡Vamos a hacerlo divertido!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Proyectar Diapositiva 18: Guiar a los estudiantes en una secuencia rápida de movimientos físicos que involucren coordinación y respuesta rápida.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Vamos a hacer lo siguiente: cuando diga ‘arriba’, toquen su cabeza; cuando diga ‘abajo’, toquen los pies. Cuando diga ‘izquierda’, toquen su hombro izquierdo, y cuando diga ‘derecha’, toquen su hombro derecho. ¡Vamos a ver qué tan rápido pueden seguir estas secuencias!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5 minutos):</strong> Explicar sin diapositiva: Relacionar cómo este ejercicio les ayuda a mejorar la precisión y rapidez en la mecanografía.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genial, Genios! Este ejercicio les ayudará a pensar rápidamente y a seguir instrucciones con precisión, justo como cuando escriben en el teclado. Ahora que estamos bien activados, ¡estamos listos para el siguiente desafío de mecanografía!”</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('team_gnius')">
+        <div class="title">🤝 Actividad 5: Team Gnius ⏰ Tiempo: 2.5 minutos</div>
+        <div class="subtitle">Formar equipos y asignar roles para el reto de mecanografía.</div>
+    </div>
+    <div id="team_gnius" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Proyectar Diapositiva 19: Explicar cómo se formarán los equipos y definir los roles de Orador y Escritor.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genios, es hora de trabajar en equipo! Formaremos equipos de 2 personas. Uno será el Orador y el otro será el Escritor. El Orador dará las palabras y revisará la posición de los dedos en el teclado, mientras que el Escritor deberá escribir la palabra con precisión. ¡Ambos tienen un rol clave para el éxito del equipo!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Proyectar Diapositiva 20: Mostrar un temporizador para que los estudiantes se organicen en equipos y recojan los materiales.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Tienen 30 segundos para elegir a su compañero. ¡Elijan sabiamente, Genios! Trabajar en equipo es clave para resolver el desafío. ¡Vamos a prepararnos!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5 minutos):</strong> Proyectar Diapositiva 21: Explicar cómo cada miembro del equipo utilizará su Magic Tablet en el reto.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “El Escritor debe escribir las palabras en su dispositivo con el teclado, asegurándose de colocar los dedos en la posición correcta, mientras que el Orador verifica la posición de los dedos y revisa si la palabra fue escrita correctamente. ¡La precisión y el trabajo en equipo son clave!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (0.5 minutos):</strong> Proyectar Diapositiva 22: Mostrar un temporizador de 30 segundos para que los estudiantes preparen sus Magic Tablets.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Tienen 30 segundos para asegurarse de que sus Magic Tablets están listas y conectadas. ¡Nos preparamos para el reto que viene!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 5 (0.5 minutos):</strong> Explicar sin diapositiva: Explicar la importancia de la colaboración entre el Orador y el Escritor.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genios, ya tienen todo listo! Recuerden que la clave es la comunicación y la precisión. El Orador debe revisar con cuidado la colocación de los dedos, y el Escritor debe seguir las instrucciones con precisión para escribir las palabras. ¡Trabajen juntos y lo lograrán!”</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('challenge')">
+        <div class="title">⚙️ Actividad 6: Challenge ⏰ Tiempo: 25.5 minutos</div>
+        <div class="subtitle">Presentación de los tres niveles de reto y práctica de mecanografía en equipo.</div>
+    </div>
+    <div id="challenge" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 23: Presentar la portada del "Challenge" y explicar los tres niveles de reto: ROOKIE, MASTER, y HACKER.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genios, llegó la hora del desafío! Hoy enfrentaremos tres niveles diferentes: ROOKIE, MASTER y HACKER. Cada uno tiene un nivel de dificultad distinto. ¡Elijan el nivel que más les guste y demuestren lo que han aprendido con el teclado!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Proyectar Diapositiva 24: Describir cada nivel y sus respectivas características para que los estudiantes decidan.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Aquí están los tres desafíos: ROOKIE, donde escribirán palabras simples dictadas por el Orador; MASTER, donde escribirán oraciones dictadas por el Orador; y HACKER, donde el Orador dictará párrafos y verificará la correcta colocación de los dedos en el teclado.”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (10 minutos):</strong> Proyectar Diapositiva 25: Explicar que el Orador dictará y revisará la posición de los dedos mientras el Escritor escribe en su dispositivo.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Ahora que han elegido su desafío, el Orador dictará las palabras, oraciones o párrafos, mientras revisa la colocación de los dedos en el teclado, y el Escritor las escribirá con precisión. ¡Manos a la obra, Genios!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (0.5 minutos):</strong> Explicar sin diapositiva: Explicar el cambio de roles para que ambos estudiantes practiquen ambas habilidades.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Es hora de cambiar de rol. Si eras el Orador, ahora serás el Escritor, y si eras el Escritor, serás el Orador. ¡Vamos a ver cómo lo hacen en el otro rol!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 5 (10 minutos):</strong> Proyectar Diapositiva 26: Guiar a los estudiantes mientras repiten el desafío en sus nuevos roles.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Ahora, sigan las mismas reglas, pero con sus nuevos roles. El Orador dictará y verificará, y el Escritor escribirá con precisión. ¡A trabajar!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 6 (3 minutos):</strong> Proyectar Diapositiva 27: Revisar los resultados y fomentar una reflexión sobre el proceso.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Increíble trabajo, Genios! Reflexionemos: ¿fue más fácil escribir cuando prestaban atención a la postura y al dictado? ¿Cómo creen que mejorar en estas habilidades les ayudará en el futuro? ¡Compartan sus experiencias!”</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('easter_egg')">
+        <div class="title">🥚 Actividad 7: Easter Egg ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Reto sorpresa relacionado con la mecanografía.</div>
+    </div>
+    <div id="easter_egg" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Proyectar Diapositiva 28: Anunciar el inicio del Easter Egg, explicando que es un reto sorpresa relacionado con la actividad de mecanografía.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genios, llegó el momento del Easter Egg! ¿Quién está listo para resolver este reto sorpresa? Hoy, el Easter Egg está relacionado con lo que hemos estado practicando: ¡mecanografía! Presten atención, porque solo los que estén bien enfocados podrán resolverlo.”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Proyectar Diapositiva 29: Mostrar la pregunta del Easter Egg: "¿Dónde deben estar los dedos en la posición inicial correcta sobre las teclas?"</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Aquí está el reto sorpresa: quiero que me digan dónde deben estar los dedos en la posición inicial correcta sobre las teclas del teclado. ¡A ver quién lo responde primero!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (1 minuto):</strong> Sin diapositiva: Elegir a tres estudiantes para que respondan en voz alta.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Voy a elegir a tres Genios para que me digan cuál es la respuesta. ¿Listos? ¡Quiero escuchar sus respuestas!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (1 minuto):</strong> Proyectar Diapositiva 30: Mostrar la respuesta correcta y felicitar a quienes acertaron.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡La respuesta correcta es…! Los dedos deben estar colocados sobre las teclas F y J, ya que estas tienen los pequeños relieves que guían la posición inicial. ¡Felicidades a quienes lo notaron! Recordemos que una buena postura nos ayuda a escribir mejor y más rápido. ¡Bien hecho!”</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('honor_dojo')">
+        <div class="title">🎖️ Actividad 8: Honor de Dojo ⏰ Tiempo: 4.5 minutos</div>
+        <div class="subtitle">Reflexionar sobre los logros de la clase y cerrar la sesión.</div>
+    </div>
+    <div id="honor_dojo" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Proyectar Diapositiva 31: Revisar los tres objetivos principales de la clase y cómo los estudiantes los han logrado.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Genios, antes de despedirnos, vamos a revisar lo que logramos hoy! Aprendimos sobre la posición correcta de los dedos en el teclado, practicamos mecanografía con palabras y oraciones, y trabajamos en equipo. ¡Gran trabajo, equipo!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Sin diapositiva: Agradecer a todo el grupo por el esfuerzo colectivo durante las actividades.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Hoy, todo el grupo hizo un esfuerzo increíble. Cada uno de ustedes ha contribuido con su genio en los retos y el trabajo en equipo. ¡Felicidades por su dedicación y colaboración!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5 minutos):</strong> Proyectar Diapositiva 32: Guiar a los estudiantes en una breve reflexión sobre el aprendizaje de hoy.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “Hoy aprendimos que la colocación de los dedos es esencial para escribir con precisión y rapidez. ¿Qué les sorprendió más de la clase de hoy? ¿Cómo creen que les ayudará en el futuro mejorar su mecanografía?”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (3 minutos):</strong> Proyectar Diapositiva 33: Recordar a los estudiantes que deben recoger el salón antes de finalizar la clase.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> “¡Y como siempre, Genios, vamos a honrar nuestro espacio! Recojan sus tablets y materiales. ¡Dejemos el salón tan limpio como nuestros códigos deben ser!”</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales si es necesario -->
+    <script>
+        // Agregar scripts adicionales aquí si es necesario
+    </script>
+
+    </body>
+    </html>
